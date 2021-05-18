@@ -5,17 +5,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="../include/header.jsp" %>
-<script src="http://code.jquery.com/jquery-3.6.0.min.js">
-</script>
 </head>
 <body>
-<form method="get">
-	이름 :<input name="name" value="${param.name }">
-	<input type="submit" value="확인">
+<form method="post">
+아이디: <input name="id" value="${param.id}"><br>
+비번: <input name="pw" value="${param.pw}"><br>
+이름: <input name="name" value="${param.name}"><br>
+나이: <input name="age" value="${param.age}"><br>
+<input type="submit" value="확인">
 </form>
-
-이름 :${param.name }
-
+아이디: <%=request.getParameter("id") %><br>
+<%-- 나이: <%=Integer.parseInt(request.getParameter("age"))%><br> --%>
+나이: ${param.age}<br>
+아이디: ${param.id}<br>
+비번: ${param.pw}<br>
+이름: ${param.name}<br>
 </body>
 </html>
+
+
+

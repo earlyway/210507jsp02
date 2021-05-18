@@ -1,0 +1,153 @@
+<script type="text/javascript">
+
+	$(document).ready(function(){
+
+		$(".error").hide();
+
+		
+
+		$("#checkVal").click( function(event){
+
+			
+
+			/** 사용자 아이디 체크 **/
+
+			var userId   = $("#userId").val();
+
+			var idLen    = userId.length;
+
+			
+
+			if(idLen < 1){
+
+				$("#errMsg_01").show();
+
+				$("#errMsg_01").text("비어있음");
+
+				event.preventDefault();
+
+			}
+
+			else{
+
+				$("#errMsg_01").hide();
+
+			}
+
+			
+
+			/** 사용자 나이 체크 **/
+
+			var userAge  = $("#userAge").val();
+
+			var ageLen   = userAge.length;
+
+			var c;
+
+			var flag = 0;
+
+			var nAge = 0;
+
+			
+
+			if(ageLen < 1){
+
+				$("#errMsg_02").show();
+
+				$("#errMsg_02").text("비어있음");
+
+				event.preventDefault();
+
+			}
+
+			else{
+
+				$("#errMsg_02").hide();
+
+			}
+
+			
+
+			for(var i=0; i < ageLen; i++){
+
+				c = userAge.charAt(i).charCodeAt(0);
+
+				if( c < 48 || c > 57 ){
+
+					$("#errMsg_02").show();
+
+					$("#errMsg_02").text("오직 숫자만 입력 가능");
+
+					event.preventDefault();
+
+					flag = 1;
+
+					break;
+
+				}
+
+				else{
+
+					$("#errMsg_02").hide();
+
+				}
+
+			}
+
+			
+
+			if( flag == 0 ){
+
+				nAge = parseInt( userAge );
+
+				if( nAge < 5 || nAge > 99 ){
+
+					$("#errMsg_02").show();
+
+					$("#errMsg_02").text("5 ~ 99까지의 숫자만 입력 가능");
+
+					event.preventDefault();
+
+				}
+
+			}
+
+			
+
+			
+
+		} );
+
+	});
+
+</script>
+
+<%----javascript end-----------------------------------------------------%>
+
+<%----HTML start---------------------------------------------------------%>
+
+<form id="form1" method="post" action="">
+
+	<div>
+
+		<span class="label">사용자 ID : </span><input type="text" class="infobox" id="userId" name="userId" />
+
+		<span class="error" id="errMsg_01"></span>
+
+	</div>
+
+	<br/>
+
+	<div>
+
+		<span class="label">사용자 나이 : </span><input type="text" class="infobox" id="userAge" name="userAge" />
+
+		<span class="error" id="errMsg_02"></span>
+
+	</div>
+
+	<input class="submit" type="submit" id="checkVal" value="Submit" />
+
+</form>
+
+

@@ -5,15 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-<%
-	response.addCookie(new Cookie("id", "park" ));
-%>
-아이디 : ${cookie.id.value }<br>
-쿠키가 변경되었습니다.<br>
-<a href="useCookie.jsp">쿠키확인</a>
-
+  <%
+  	// addCookie( new Cookie("변수명","새로운 값"))
+  	response.addCookie(new Cookie("id", "park"));
+  %>
+  아이디 : ${cookie.id.value}
+  <br>
+  쿠키가 변경되었습니다.
+  <br>
+  <a href="useCookie.jsp">쿠키 확인</a>
 </body>
 </html>

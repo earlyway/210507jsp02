@@ -11,8 +11,8 @@ public class DB {
 		DataSource ds=null;
 		Connection conn=null;
 		try {
-			Context ctx= new InitialContext();
-			ds = (DataSource) ctx.lookup("java:comp/env/oraDB");
+			Context ctx=new InitialContext();
+			ds=(DataSource)ctx.lookup("java:comp/env/oraDB");
 			conn=ds.getConnection();
 		} catch (Exception e) {
 			e.printStackTrace();

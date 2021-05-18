@@ -1,0 +1,7 @@
+[
+	{"id":"1", "name":"레몬", "price":"3000", "description":"피로회복"},
+	{"id":"2", "name":"사과", "price":"5000", "description":"비타민"},
+	{"id":"3", "name":"블루베리", "price":"7000", "description":"눈회복"},
+	{"id":"4", "name":"체리", "price":"8000", "description":"피로회복"},
+	{"id":"5", "name":"수박", "price":"9000", "description":"수분"}
+]

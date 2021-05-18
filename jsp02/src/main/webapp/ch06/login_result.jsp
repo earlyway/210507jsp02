@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-${result }
-
+${result}
 </body>
 </html>

@@ -8,26 +8,24 @@
 </head>
 <body>
 <%
-Integer countNum = (Integer)session.getAttribute("counter");
+Integer countNum=(Integer)session.getAttribute("counter");
 int num=1;
-if(countNum == null){
-	countNum = 1;
-}else {
-	num = countNum.intValue();
+if(countNum==null){
+	countNum=1;
+}else{
+	num=countNum.intValue();
 	num++;
-	countNum = num;
+	countNum=num;
 }
 session.setAttribute("counter", countNum);
-
 %>
-당신은 <%=countNum.intValue() %>번째 방문하셨습니다.<br>
+<%=countNum.intValue()%>번째 방문입니다.
 <%
-String counter= Integer.toString(num);
+String counter=Integer.toString(num);
 for(int i=0; i<counter.length(); i++){
-	String img = "<img src='../images/"+counter.charAt(i)+".gif'>";
+	String img="<img src='../images/"+counter.charAt(i)+".gif'>";
 	out.println(img);
 }
-
 %>
 </body>
 </html>

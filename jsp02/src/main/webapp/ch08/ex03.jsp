@@ -5,15 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="../include/header.jsp" %>
-<script src="http://code.jquery.com/jquery-3.6.0.min.js">
-</script>
 </head>
 <body>
 <form method="post" action="ex03_result.jsp">
-숫자<input type="number" name="num">
+숫자 <input type="number" name="num">
 <input type="submit" value="확인">
 </form>
-
 </body>
 </html>

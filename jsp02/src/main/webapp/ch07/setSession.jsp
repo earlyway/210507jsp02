@@ -5,8 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="http://code.jquery.com/jquery-3.6.0.min.js">
-</script>
 </head>
 <body>
 <%
@@ -18,10 +16,8 @@ session.setAttribute("id", id);
 session.setAttribute("passwd", passwd);
 session.setAttribute("age", age);
 session.setAttribute("height", height);
-out.println("세션에 값을 저장했습니다.");
-
+out.println("저장되었습니다.");
 %>
 <a href="viewSession.jsp">세션 확인</a>
-
 </body>
 </html>

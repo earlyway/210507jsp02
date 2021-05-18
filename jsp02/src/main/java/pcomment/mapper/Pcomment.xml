@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pcomment">
+	<select id="view" resultType="pcomment.dto.CommentDTO">
+		select *from pcomment where num=#{num}
+	</select>
+	<select id="count" resultType="int">
+		select count(*) from pcomment
+	</select>
+	<insert id="commentAdd">
+		insert into board_comment(comment_num,board_num,writer,content)
+		values((select nvl(max(comment_num)+1,1)
+		from board_comment),#{board_num},#{writer},#{content})
+	</insert>
+	<select id="commentList"
+	resultType="board.dto.BoardCommentDTO">
+		select comment_num,board_num,writer,content,to_char(
+		reg_date,'yyyy-mm-dd HH:mi:ss') reg_date
+		from board_comment
+		where board_num=#{board_num}
+		order by comment_num
+	</select>
+</mapper>
